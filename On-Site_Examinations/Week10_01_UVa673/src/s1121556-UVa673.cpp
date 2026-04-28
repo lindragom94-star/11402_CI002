@@ -19,7 +19,7 @@ int main(){
         flag=true;
         break;
       }
-      if(s[j]==")"){
+      if(s[j]==')'){
         if(c.empty()==true){
           flag=false;
           break;
@@ -34,7 +34,7 @@ int main(){
           break;
         }
       }
-      if(s[j]=="]"){
+      if(s[j]==']'){
         if(c.empty()==true){
           flag=false;
           break;
