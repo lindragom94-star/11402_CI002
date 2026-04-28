@@ -3,21 +3,22 @@
 #include <string>
 using namespace std;
 int main(){
-  stack<char> c;
   string s;
   char a;
-  bool flag;
   int N;
   cin>>N;
+  cin.ignore();
   for(int i=1;i<=N;i++){
-    cin>>s;
+    stack<char> c;
+    bool flag = true;
+    getline(cin,s);
+    if(s.size()==0){
+        cout<<"Yes"<<endl;
+        continue;
+    }
     for(int j=0;j<s.size();j++){
       if(s[j]=='(' || s[j]=='['){
         c.push(s[j]);
-      }
-      if(s==""){
-        flag=true;
-        break;
       }
       if(s[j]==')'){
         if(c.empty()==true){
@@ -50,10 +51,10 @@ int main(){
         }
       }
     }
-    if(flag==true){
+    if(flag == true && c.empty() == true){
       cout<<"Yes"<<endl;
     }
-    if(flag==false){
+    else{
       cout<<"No"<<endl;
     }
   }
